@@ -1,33 +1,51 @@
 #home{
-    /* border: solid black 1px; */
-    height: 100vh;
+    /* border: solid red 1px; */
+    height: 85%;
     width: 100%;
 }
 
-#home-header{
-    /* border: solid black 1px; */
-    height: 100px;
+/* #home-header{
+    border: solid black 1px;
+    height: 300px;
     width: 100%;
     box-sizing: border-box;
     background-color: #9CAAC6;
-}
+} */
 
 #home-body{
     /* border: solid blue 1px; */
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100%;
 
 }
 
 #home-left{    
-    /* border: solid red 1px; */
+    border: solid #ccc 1px;
     height: 100%;
     width: 60%;
 }
 
+#revenue{
+    border: solid #ccc 1px;
+    height: 300px;
+    width: 90%;
+}
+
+#weather{
+    border: solid #ccc 1px;
+    height: 200px;
+    width: 90%;
+}
+
 #home-right{    
-    /* border: solid green 1px; */
+    border: solid #ccc 1px;
     height: 100%;
     width: 40%;
+}
+
+#reminders{
+    border: solid #ccc 1px;
+    height: 200px;
+    width: 90%;
 }

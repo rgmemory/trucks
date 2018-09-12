@@ -22,6 +22,7 @@ class App extends Component {
         null}
 
         <div id="app-right">
+          <div id="app-header">HEADER</div>
           {Routes}
         </div>
       </div>

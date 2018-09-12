@@ -10,13 +10,27 @@ export default class Home extends Component{
         return(
             <div id="home">
                 
-                <div id="home-header">
+                {/* <div id="home-header">
                     Home
-                </div>
+                </div> */}
 
                 <div id="home-body">
-                    <div id="home-left">Left</div>
-                    <div id="home-right">Right</div>
+                    <div id="home-left">
+                        <div id="revenue">
+                            Revenue
+                        </div>
+
+                        <div id="weather">
+                            Weather
+                        </div>
+                    </div>
+
+
+                    <div id="home-right">
+                        <div id="reminders">
+                            Reminders
+                        </div>
+                    </div>
                 </div>
                 
             </div>

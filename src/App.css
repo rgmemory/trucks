@@ -5,15 +5,22 @@
   width: 100%;
 }
 
+#app-header{
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+
 #app-left{
-  /* border: solid black 1px; */
-  height: 100%;
+  /* border: solid #ccc 1px; */
+  height: 100vh;
   width: 15%;
 }
 
 #app-right{
-  /* border: solid green 1px; */
-  height: 100%;
+  /* border: solid #ccc 1px; */
+  height: 100vh;
   width: 85%;
 }
+
 
