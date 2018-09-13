@@ -1,0 +1,33 @@
+#trucks{
+    border: solid #ccc 1px;
+    margin: auto;
+    height: 70%;
+    width: 90%;
+    display: flex;
+}
+
+/* .truck-title{
+    border: solid #ccc 1px;
+    height: 100%;
+    width: 150px;
+    display: flex;
+    justify-content: center;
+} */
+
+#render-trucks{
+    border: solid black 1px;
+}
+
+.edit{
+    background-color: dodgerblue;
+    height: 30px;
+    width: 50px;
+}
+
+.delete{
+    background-color: red;
+    height: 30px;
+    width: 50px;
+}
+
+

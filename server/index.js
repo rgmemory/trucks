@@ -23,3 +23,5 @@ massive(CONNECTION_STRING).then(db => {
 app.listen(3005, function(){
     console.log('listening on 3005')
 })
+
+app.get('/api/gettrucks', controller.getTrucks)
