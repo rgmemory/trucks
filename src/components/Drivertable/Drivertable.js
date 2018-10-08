@@ -51,7 +51,7 @@ function SimpleTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* {props.trucks.map(row => {
+          {props.drivers.map(row => {
             return (
               <TableRow key={row.id}>
                 <TableCell component="th" scope="row">
@@ -65,7 +65,7 @@ function SimpleTable(props) {
                 <TableCell ><button class="edit">Edit</button><button class="delete">Delete</button></TableCell>
               </TableRow>
             );
-          })} */}
+          })}
         </TableBody>
       </Table>
     </Paper>

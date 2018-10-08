@@ -1,9 +1,14 @@
 module.exports = {
     getTrucks: function(req, res){
-        console.log('backend works')
         req.app.get('db').get_trucks().then(response => {
-            console.log(response)
             res.status(200).send(response);
+        })
+    },
+
+    getDrivers: function(req, res){
+        req.app.get('db').get_drivers().then(res => {
+            console.log('backend drivers', res)
+            res.status(200).send(response)
         })
     }
 }

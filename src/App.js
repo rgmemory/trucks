@@ -23,7 +23,9 @@ class App extends Component {
 
         <div id="app-right">
           <div id="app-header">HEADER</div>
-          {Routes}
+            <div id="app-routes">
+              {Routes}
+            </div>
         </div>
       </div>
     )

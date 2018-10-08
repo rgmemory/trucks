@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './home.css'
+import axios from 'axios'
 
 export default class Home extends Component{
     constructor(){
@@ -17,18 +18,17 @@ export default class Home extends Component{
                 <div id="home-body">
                     <div id="home-left">
                         <div id="revenue">
-                            Revenue
+                            <p>Revenue Overview</p>
                         </div>
 
                         <div id="weather">
-                            Weather
+                            <p>Weather Center</p>
                         </div>
                     </div>
 
-
                     <div id="home-right">
                         <div id="reminders">
-                            Reminders
+                            <p>Reminders</p>
                         </div>
                     </div>
                 </div>

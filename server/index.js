@@ -25,3 +25,4 @@ app.listen(3005, function(){
 })
 
 app.get('/api/gettrucks', controller.getTrucks)
+app.get('/api/getdrivers', controller.getDrivers)
