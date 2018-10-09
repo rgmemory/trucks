@@ -8,8 +8,14 @@ require('dotenv').config();
 //truckusers
 //truckdrivers
 //trucktrucks
+//https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=1111111111
 
-let {CONNECTION_STRING} = process.env
+//https://api.openweathermap.org/data/2.5/weather?zip=84663&APPID=e5b6604c2f44977a986dfaa20987dfd5
+
+
+let {CONNECTION_STRING,
+    API_KEY
+} = process.env
 
 let app = express();
 
@@ -26,3 +32,7 @@ app.listen(3005, function(){
 
 app.get('/api/gettrucks', controller.getTrucks)
 app.get('/api/getdrivers', controller.getDrivers)
+
+app.post('/api/getweather', controller.getWeather) 
+
+app.get('/api/getreminders', controller.getReminders)
