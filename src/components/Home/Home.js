@@ -7,7 +7,8 @@ export default class Home extends Component{
         super()
 
         this.state = {
-            zip: null
+            zip: null,
+            reminders: []
         }
     }
 
@@ -16,8 +17,8 @@ export default class Home extends Component{
             zip: value,
             temperature: null,
             description: '',
-            weatherpic: '',
-            reminders: []
+            weatherpic: ''
+            
         })
     }
 
@@ -42,18 +43,23 @@ export default class Home extends Component{
             this.setState({
                 reminders: res.data
             })
+
+            // console.log('reminders are', this.state.reminders)
         })
     }
 
     render(){
+        // console.log('reminders are', this.state.reminders)
 
-        let formattedReminders = this.state.reminders.map((current, index) => {
+        let reminders = this.state.reminders.map((current, index) => {
             return(
-                <div>
-                    {current.name}
+                <div key={current + index}>
+                    {current.reminder}
                 </div>
             )
         })
+
+        // console.log('reminders are', this.state.reminders)
 
         return(
             <div id="home">
@@ -81,7 +87,7 @@ export default class Home extends Component{
                     <div id="home-right">
                         <div id="reminders">
                             <p>Reminders</p>
-                            {/* <div>{this.state.reminders}</div> */}
+                            {reminders}
                         </div>
                     </div>
                 </div>

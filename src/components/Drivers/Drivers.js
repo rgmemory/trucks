@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import './drivers.css'
 import axios from 'axios'
-import Drivertable from '../Trucktable/Trucktable'
+import Simpletable from '../Drivertable/Drivertable'
+import plus from '../../images/plus.png'
 
-export default class Trucks extends Component{
+export default class Drivers extends Component{
     constructor(){
         super()
 
@@ -14,7 +15,6 @@ export default class Trucks extends Component{
 
     componentDidMount(){
         axios.get('/api/getdrivers').then(res => {
-            console.log(res.data, 'res')  
             this.setState({
                 drivers: res.data
             })    
@@ -22,11 +22,20 @@ export default class Trucks extends Component{
     }
 
     render(){
-        
-        return(
-            <div id="trucks">
 
-                <Drivertable drivers={this.state.drivers}/>
+        return(
+            <div id="drivers">
+
+                    <div id="drivers-table">
+                        <Simpletable drivers={this.state.drivers}/>
+                    </div>
+
+                    <div id="drivers-add">
+                        <button><img src={plus} alt="plus sign"/>Add Driver</button>
+                    </div>
+
+                    
+                
 
             </div>
         )

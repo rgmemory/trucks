@@ -8,7 +8,8 @@ module.exports = {
     },
 
     getDrivers: function(req, res){
-        req.app.get('db').get_drivers().then(res => {
+        req.app.get('db').get_drivers().then(response => {
+            console.log('backedn drivers', response)
             res.status(200).send(response)
         })
     },

@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import './drivertable.css'
 
 const styles = theme => ({
   root: {
@@ -41,28 +42,23 @@ function SimpleTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Unit</TableCell>
-            <TableCell >Make</TableCell>
-            <TableCell >Model</TableCell>
-            <TableCell numeric>VIN</TableCell>
-            <TableCell >Plate</TableCell>
-            <TableCell numeric>Year</TableCell>
+            <TableCell>First</TableCell>
+            <TableCell >Last</TableCell>
+            <TableCell numeric>Phone</TableCell>
+            <TableCell >Station</TableCell>
             <TableCell >Actions</TableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
           {props.drivers.map(row => {
             return (
-              <TableRow key={row.id}>
-                <TableCell component="th" scope="row">
-                  {row.unit}
-                </TableCell>
-                <TableCell >{row.make}</TableCell>
-                <TableCell >{row.model}</TableCell>
-                <TableCell numeric>{row.vin}</TableCell>
-                <TableCell >{row.plate}</TableCell>
-                <TableCell numeric>{row.year}</TableCell>
-                <TableCell ><button class="edit">Edit</button><button class="delete">Delete</button></TableCell>
+              <TableRow key={row.phone}>
+                <TableCell >{row.first}</TableCell>
+                <TableCell >{row.last}</TableCell>
+                <TableCell numeric>{row.phone}</TableCell>
+                <TableCell >{row.station}</TableCell>
+                <TableCell ><button className="change-button edit">Edit</button><button className="change-button delete">Delete</button></TableCell>
               </TableRow>
             );
           })}

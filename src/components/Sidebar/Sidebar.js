@@ -17,7 +17,7 @@ export default class Sidebar extends Component{
         this.setState({
             underline: !this.state.underline
         })
-        console.log(this.state.underline)
+        // console.log(this.state.underline)
     }
 
     render(){

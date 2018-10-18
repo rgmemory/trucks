@@ -2,7 +2,8 @@
     border: solid black 1px;
     height: 100%;
     width: 100%;
-    background-color: #5A79A5;
+    background-color: dodgerblue;
+    /* font-family: "Open Sans",Arial,sans-serif; */
 }
 
 #sidebar-buttons{
@@ -24,6 +25,7 @@
 #sidebar button:hover{
     
     color: #ccc;
+    cursor: pointer;
 }
 
 #sidebar button:visited{
