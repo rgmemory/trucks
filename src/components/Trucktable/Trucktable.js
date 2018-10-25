@@ -7,6 +7,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import '../Drivertable/Drivertable'
 
 const styles = theme => ({
   root: {
@@ -33,7 +34,7 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
-function SimpleTable(props) {
+function TruckTable(props) {
   const { classes } = props;
 
   return (
@@ -41,39 +42,38 @@ function SimpleTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <TableCell>Unit</TableCell>
-            <TableCell >Make</TableCell>
+            <TableCell >Unit</TableCell>
+            <TableCell>Make</TableCell>
             <TableCell >Model</TableCell>
-            <TableCell numeric>VIN</TableCell>
             <TableCell >Plate</TableCell>
+            <TableCell >Vin</TableCell>
             <TableCell numeric>Year</TableCell>
             <TableCell >Actions</TableCell>
+            
           </TableRow>
         </TableHead>
         <TableBody>
-          {/* {props.trucks.map(row => {
+          {props.trucks.map(row => {
             return (
-              <TableRow key={row.id}>
-                <TableCell component="th" scope="row">
-                  {row.unit}
-                </TableCell>
+              <TableRow key={row.make}>
+                <TableCell numeric>{row.unit}</TableCell>
                 <TableCell >{row.make}</TableCell>
                 <TableCell >{row.model}</TableCell>
-                <TableCell numeric>{row.vin}</TableCell>
                 <TableCell >{row.plate}</TableCell>
-                <TableCell numeric>{row.year}</TableCell>
-                <TableCell ><button class="edit">Edit</button><button class="delete">Delete</button></TableCell>
+                <TableCell >{row.vin}</TableCell>
+                <TableCell >{row.year}</TableCell>
+                <TableCell ><button className="change-button edit">Edit</button><button className="change-button delete">Delete</button></TableCell>
               </TableRow>
             );
-          })} */}
+          })}
         </TableBody>
       </Table>
     </Paper>
   );
 }
 
-SimpleTable.propTypes = {
+TruckTable.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(SimpleTable);
+export default withStyles(styles)(TruckTable);

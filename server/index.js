@@ -36,3 +36,7 @@ app.get('/api/getdrivers', controller.getDrivers)
 app.post('/api/getweather', controller.getWeather) 
 
 app.get('/api/getreminders', controller.getReminders)
+
+app.post('/api/submitdriver', controller.submitDriver)
+
+app.delete('/api/deletedriver/:id', controller.deleteDriver)

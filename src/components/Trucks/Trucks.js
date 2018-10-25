@@ -2,7 +2,11 @@ import React, {Component} from 'react'
 import './trucks.css'
 import axios from 'axios'
 import ReactModal from 'react-modal'
-// import Trucktable from '../Trucktable/Trucktable'
+// import TruckTable from '../TruckTable/TruckTable'
+import plus from '../../images/plus.png'
+
+
+import TruckTable from '../Trucktable/Trucktable'
 
 
 export default class Trucks extends Component{
@@ -46,11 +50,15 @@ export default class Trucks extends Component{
 
     render(){
 
-        console.log(this.state)
+        // console.log(this.state.trucks)
         
         return(
             <div id="trucks">
-                <button onClick={this.handleOpenModal}>Trigger Modal</button>
+                
+                <TruckTable trucks={this.state.trucks}/>
+                <div id="drivers-add">
+                        <button onClick={this.handleOpenModal}><img src={plus} alt="plus sign"/>Add Driver</button>
+                    </div>
         <ReactModal 
            isOpen={this.state.showModal}
            contentLabel="onRequestClose Example"
@@ -91,10 +99,10 @@ export default class Trucks extends Component{
                 </div>
                 
           </div>
-          {/* <button onClick={this.handleCloseModal}>Close Modal</button> */}
         </ReactModal>
 
-                {/* <Trucktable trucks={this.state.trucks}/> */}
+
+                {/* <button onClick={this.handleOpenModal}>Trigger Modal</button> */}
 
             </div>
         )

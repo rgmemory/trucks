@@ -34,8 +34,10 @@ const rows = [
   createData('Gingerbread', 356, 16.0, 49, 3.9),
 ];
 
+
 function SimpleTable(props) {
   const { classes } = props;
+    
 
   return (
     <Paper className={classes.root}>
@@ -58,7 +60,12 @@ function SimpleTable(props) {
                 <TableCell >{row.last}</TableCell>
                 <TableCell numeric>{row.phone}</TableCell>
                 <TableCell >{row.station}</TableCell>
-                <TableCell ><button className="change-button edit">Edit</button><button className="change-button delete">Delete</button></TableCell>
+                
+                <TableCell >
+                  <button  onClick={() => props.editDriver()} className="change-button edit">Edit</button>
+                  <button onClick={() => props.deleteDriver(row.id)} className="change-button delete">Delete</button>
+                </TableCell>
+
               </TableRow>
             );
           })}
