@@ -40,3 +40,5 @@ app.get('/api/getreminders', controller.getReminders)
 app.post('/api/submitdriver', controller.submitDriver)
 
 app.delete('/api/deletedriver/:id', controller.deleteDriver)
+
+app.post('/api/dispatch', controller.dispatch)

@@ -1,0 +1,13 @@
+#dispatch1{
+    border: solid black 1px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dispatch2{
+    border: solid red 1px;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
