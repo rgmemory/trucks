@@ -21,10 +21,15 @@ class Dispatch2 extends Component{
         })
     }
 
-    dispatch = (index) => {
-        console.log('dispatch clicked', index)
-        axios.post('/api/dispatch', {shipper: this.props.shipper, pickup: this.props.pickup, destination: this.props.destination, date: this.props.date, rate: this.props.rate}).then(res => {
-            console.log('front end dispatch')
+    dispatch = (index, name) => {
+        axios.post('/api/dispatch', {
+            name, 
+            shipper: this.props.shipper, 
+            pickup: this.props.pickup, 
+            destination: this.props.destination, 
+            date: this.props.date, 
+            rate: this.props.rate}).then(res => {
+            
         })
     }
 
@@ -35,7 +40,7 @@ class Dispatch2 extends Component{
                 <div key={current + index}>
                     {current.first}
                     {current.last}
-                    <button onClick={() => {this.dispatch(index)}}>Dispatch</button>
+                    <button onClick={() => {this.dispatch(index, current.first)}}>Dispatch</button>
                 </div>
             )
         })

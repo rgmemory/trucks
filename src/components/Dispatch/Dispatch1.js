@@ -15,7 +15,6 @@ class Dispatch1 extends Component{
 
     render(){
 
-        // console.log(this.props.shipper)
         return(
             <div id="dispatch1">
                 <p>Enter Job Details</p>
@@ -34,7 +33,6 @@ class Dispatch1 extends Component{
                 
                 <div>
                     <Link to="/dispatch2"><button >Next</button></Link>
-                    {/* onClick={this.props.handleShipper(this.state.shipper)} */}
                 </div>
             </div>
         )
@@ -49,18 +47,6 @@ const mapDispatchToProps = {
     handleRate
     
 }
-
-// function mapStateToProps(reduxState) {
-//     let{shipper, pickup, destination, rate, date} = reduxState
-
-//     return{
-//         shipper: reduxState.shipper,
-//         pickup: reduxState.pickup,
-//         destination: reduxState.destination,
-//         rate: reduxState.rate,
-//         date: reduxState.date
-//     }
-// }
 
 export default connect(
     null,

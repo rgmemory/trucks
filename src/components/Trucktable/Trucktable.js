@@ -53,9 +53,9 @@ function TruckTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.trucks.map(row => {
+          {props.trucks.map((row, index) => {
             return (
-              <TableRow key={row.make}>
+              <TableRow key={row.make + index}>
                 <TableCell numeric>{row.unit}</TableCell>
                 <TableCell >{row.make}</TableCell>
                 <TableCell >{row.model}</TableCell>
