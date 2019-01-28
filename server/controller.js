@@ -43,50 +43,53 @@ module.exports = {
     dispatch: function(req, res){
         let {name, shipper, pickup, destination, date, rate} = req.body
 
-        const dispatchOutput = `
-            <p>You have been dispatched</p>
-            <p>Here are the deets</p>
+        // const dispatchOutput = `
+        //     <p>You have been dispatched</p>
+        //     <p>Here are the deets</p>
 
-            <ul>
-                <li>Shipper: ${shipper}</li>
-                <li>Pickup Location: ${pickup}</li>
-                <li>Destination: ${destination}</li>
-                <li>Date: ${date}</li>
-                <li>Rate: ${rate}</li>
+        //     <ul>
+        //         <li>Shipper: ${shipper}</li>
+        //         <li>Pickup Location: ${pickup}</li>
+        //         <li>Destination: ${destination}</li>
+        //         <li>Date: ${date}</li>
+        //         <li>Rate: ${rate}</li>
             
-            </ul>
-        `
+        //     </ul>
+        // `
 
-        let transporter = nodemailer.createTransport({
-            service: 'gmail',
-            secure: false,
-            port: 25,
-            auth: {
-                user: 'russelldevmtn@gmail.com',
-                pass: 'russellmemory'
-            },
-            tls: {
-                rejectUnauthorized: false
-            }
-        });
+        // let transporter = nodemailer.createTransport({
+        //     service: 'gmail',
+        //     secure: false,
+        //     port: 25,
+        //     auth: {
+        //         user: 'russelldevmtn@gmail.com',
+        //         pass: 'russellmemory'
+        //     },
+        //     tls: {
+        //         rejectUnauthorized: false
+        //     }
+        // });
     
-        let helperOptions = {
-            from: '"Russell" <russelldevmtn@gmail.com>',
-            to: 'russelldevmtn@gmail.com',
-            subject: 'Dispatch for ' + name,
-            // text: 'Hello world?',
-            html: dispatchOutput
-        };
+        // let helperOptions = {
+        //     from: '"Russell" <russelldevmtn@gmail.com>',
+        //     to: 'russelldevmtn@gmail.com',
+        //     subject: 'Dispatch for ' + name,
+        //     // text: 'Hello world?',
+        //     html: dispatchOutput
+        // };
     
-        transporter.sendMail(helperOptions, (error, info) => {
-            if (error) {
-                return console.log(error);
-            }
-            // console.log('Message sent: %s', info.messageId);
-            // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
-        });
+        // transporter.sendMail(helperOptions, (error, info) => {
+        //     if (error) {
+        //         return console.log(error);
+        //     }
+        //     // console.log('Message sent: %s', info.messageId);
+        //     // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+        // });
 
-        req.app.get('db').add_job([name, shipper, pickup, destination, date, rate]).then(response => {
+        let revenue = rate * 4;
+        console.log(revenue, 'revenue')
+
+        req.app.get('db').add_job([name, shipper, pickup, destination, date, rate, revenue]).then(response => {
             console.log('backend job works')
         })
 
@@ -105,8 +108,19 @@ module.exports = {
     },
 
     deletejob: function(req, res){
-        console.log('backend delelte job', req.body.index)
+        // console.log('backend delelte job', req.params.index)
 
-        res.sendStatus(200);
+        req.app.get('db').delete_job(req.params.index).then(response => {
+
+            res.sendStatus(200);
+        })
+
+    },
+
+    getRevenue: function(req, res){
+        req.app.get('db').get_revenue().then(response => {
+            console.log('revenue works', response)
+            res.send(response)
+        })
     }
 }

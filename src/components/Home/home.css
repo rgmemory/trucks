@@ -38,6 +38,10 @@
     padding: 10px;
 }
 
+.weather-input{
+    outline: none;
+}
+
 #weather-pic{
     height: auto;
     width: auto;

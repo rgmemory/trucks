@@ -26,7 +26,7 @@ class Dispatch1 extends Component{
                 <input type="text" onChange={(e) => this.props.handlePickup(e.target.value)}/>
                 <p>Destination Address</p>
                 <input type="text" onChange={(e) => this.props.handleDestination(e.target.value)}/>
-                <p>Rate</p>
+                <p>Pay</p>
                 <input type="text" onChange={(e) => this.props.handleRate(e.target.value)}/>
                 <p>Date</p>
                 <input type="text" onChange={(e) => this.props.handleDate(e.target.value)}/>

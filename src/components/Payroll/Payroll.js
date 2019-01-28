@@ -6,14 +6,13 @@ export default class Payroll extends Component{
         super()
 
         this.state = {
-            job: []
+            job: [],
+            totalRate: null
         }
     }
 
     componentDidMount(){
-        console.log('did mount')
         axios.get('/api/getpayroll').then(res => {
-            console.log('front end payroll', res.data)
             this.setState({
                 job: res.data
             })
@@ -21,33 +20,39 @@ export default class Payroll extends Component{
     }
 
     payDriver = (value) => {
-        console.log('paydriver clicked', value)
 
-        axios.delete('/api/deletejob', {index: value}).then(res => {
-            console.log('front end delte job')
+        axios.delete(`/api/deletejob/${value}`).then(response => {
+
+            axios.get('/api/getpayroll').then(res => {
+                this.setState({
+                    job: res.data
+                })
+            })
         })
     }
 
     
+
+    
     render(){
 
+
         let displayJobs = this.state.job.map((current, index) => {
-            console.log(current);
 
             return(
                 <div key={current + index}>
+                    ID: {current.id}
                     Name: {current.name}
                     Rate: {current.rate}
-                    <button onClick={() => {this.payDriver(index)}}>Pay For Job</button>
+                    <button onClick={() => {this.payDriver(current.id)}}>Pay For Job</button>
                 </div>
             )
         })
 
         return(
             <div className="payroll">
-                {/* <div>payroll</div> */}
 
-                <div>Payroll per driver</div>
+                <div>Pay for job</div>
                 {displayJobs}
             </div>
         )

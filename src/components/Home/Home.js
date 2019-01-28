@@ -8,7 +8,9 @@ export default class Home extends Component{
 
         this.state = {
             zip: null,
-            reminders: []
+            reminders: [],
+            revenue: null, 
+            expenses: null
         }
     }
 
@@ -17,67 +19,86 @@ export default class Home extends Component{
             zip: value,
             temperature: null,
             description: '',
-            weatherpic: ''
-            
+            weatherpic: '',
+            city: ''
         })
     }
 
     submitZip = () => {
         axios.post('/api/getweather', {zip: this.state.zip}).then(res => {
+            console.log(res.data.name, 'res')
             this.setState({
                 weatherpic: `http://openweathermap.org/img/w/${res.data.weather[0].icon}.png`,
                 temperature: Math.floor((9/5 * (res.data.main.temp - 273) + 32)),
-                description: res.data.weather[0].description
+                description: res.data.weather[0].description,
+                city: res.data.name
             })
         })
     }
 
     componentDidMount(){
-        // console.log('front end mounted')
-        // axios.get('api.openweathermap.org/data/2.5/weather?zip=94040,us').then(res => {
-        //     console.log('front end weather works', res)
-        // })
-
         axios.get('/api/getreminders').then(res => {
-            console.log('front end reminders works', res.data)
+            let tempRevenue = 0;
+            let tempExpenses = 0;
+            axios.get('/api/revenue').then(response => {
+                console.log('front end revenue', response.data)
+                // let temp
+                response.data.forEach(current => {
+                    tempRevenue += current.revenue
+                    tempExpenses += current.rate
+
+                    this.setState({
+                        expenses: tempExpenses,
+                        revenue: tempRevenue
+                    })
+                })
+
+                console.log('tempreve', tempRevenue)
+                console.log('tempExpense', tempExpenses)
+            })
             this.setState({
                 reminders: res.data
+                // expenses: tempExpenses,
+                // revenue: tempRevenue
             })
-
-            // console.log('reminders are', this.state.reminders)
         })
+
+        
     }
 
     render(){
-        // console.log('reminders are', this.state.reminders)
-
         let reminders = this.state.reminders.map((current, index) => {
             return(
                 <div key={current + index}>
-                    {current.reminder}
+                    <div className="reminder">
+                        {current.reminder}
+                    </div>
+                    <button>Remove</button>
                 </div>
             )
         })
 
-        // console.log('reminders are', this.state.reminders)
 
         return(
             <div id="home">
-                
-                {/* <div id="home-header">
-                    Home
-                </div> */}
 
                 <div id="home-body">
                     <div id="home-left">
                         <div id="revenue">
                             <p>Revenue Overview</p>
+                            Income:
+                            {this.state.revenue}
+                            Costs:
+                            {this.state.expenses}
+                            Revenue:
+                            {this.state.revenue - this.state.expenses}
                         </div>
 
                         <div id="weather">
                             <p>Weather Center</p>
-                            <input type="text" onChange={e => this.updateZip(e.target.value)}/>
+                            <input className='weather-input' type="text" onChange={e => this.updateZip(e.target.value)}/>
                             <button onClick={() => this.submitZip()}>Submit</button>
+                            <div id="weather-city">{this.state.city}</div>
                             <div id="weather-description">{this.state.description}</div>
                             <img id="weather-pic" src={this.state.weatherpic}/>
                             <div id="weather-temperature">{this.state.temperature}</div>
@@ -88,7 +109,10 @@ export default class Home extends Component{
                         <div id="reminders">
                             <p>Reminders</p>
                             {reminders}
+                            <input type="text"/>
+                            <button>Add</button>
                         </div>
+
                     </div>
                 </div>
                 

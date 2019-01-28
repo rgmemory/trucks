@@ -46,4 +46,6 @@ app.post('/api/dispatch', controller.dispatch)
 
 app.get('/api/getpayroll', controller.getpayroll)
 
-app.delete('/api/deletejob', controller.deletejob)
+app.delete('/api/deletejob/:index', controller.deletejob)
+
+app.get('/api/revenue', controller.getRevenue)

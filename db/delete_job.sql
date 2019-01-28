@@ -1,0 +1,1 @@
+delete from truckjobs where id = $1;

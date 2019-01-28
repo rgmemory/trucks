@@ -40,7 +40,7 @@ class Dispatch2 extends Component{
                 <div key={current + index}>
                     {current.first}
                     {current.last}
-                    <button onClick={() => {this.dispatch(index, current.first)}}>Dispatch</button>
+                    <Link to="/dispatch1"><button onClick={() => {this.dispatch(index, current.first)}}>Dispatch</button></Link>
                 </div>
             )
         })
