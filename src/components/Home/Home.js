@@ -12,20 +12,39 @@ export default class Home extends Component {
       reminders: [],
       revenue: null,
       expenses: null,
-    //   chartData: {
-    //       labels: ['Income', 'Revenue', 'Costs'],
-    //       datasets: [
-    //           {
-    //             data:[
-    //                 1,2,3
-    //             ],
-    //             backgroundColor: [
-    //                 'red', 'green', 'yellow'
-    //             ]
-    //           }
-    //       ]
-    //   }
+      reminder: ''
     };
+  }
+
+  removeReminder = value => {
+      console.log(value)
+      axios.delete(`/api/removeReminder/${value}`).then(res => {
+          axios.get('/api/getreminders').then(response => {
+              console.log('the reminders are', response)
+              this.setState({
+
+                  reminders: response.data
+              })
+          })
+    })
+      
+  }
+
+  addReminder = (value) => {
+    this.setState({
+        reminder: value
+    })
+  }
+
+  submitReminder = () => {
+
+      axios.post('/api/submitReminder', {reminder: this.state.reminder}).then(response => {
+          axios.get('/api/getreminders').then(res => {
+            this.setState({
+                reminders: res.data
+            })
+        })
+      })
   }
 
   updateZip = value => {
@@ -54,10 +73,10 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.get("/api/getreminders").then(res => {
+        console.log(res, 'reminders')
       let tempRevenue = 0;
       let tempExpenses = 0;
       axios.get("/api/revenue").then(response => {
-        console.log("front end revenue", response.data);
         response.data.forEach(current => {
           tempRevenue += current.revenue;
           tempExpenses += current.rate;
@@ -66,23 +85,16 @@ export default class Home extends Component {
             expenses: tempExpenses,
             revenue: tempRevenue,
             chartData: {
-                labels: ['Income', 'Revenue', 'Costs'],
-                datasets: [
-                    {
-                      data:[
-                          tempRevenue, tempRevenue - tempExpenses, tempExpenses
-                      ],
-                      backgroundColor: [
-                          'red', 'green', 'yellow'
-                      ]
-                    }
-                ]
+              labels: ["Income", "Revenue", "Costs"],
+              datasets: [
+                {
+                  data: [tempRevenue, tempRevenue - tempExpenses, tempExpenses],
+                  backgroundColor: ["red", "green", "yellow"]
+                }
+              ]
             }
           });
         });
-
-        console.log("tempreve", tempRevenue);
-        console.log("tempExpense", tempExpenses);
       });
       this.setState({
         reminders: res.data
@@ -95,7 +107,7 @@ export default class Home extends Component {
       return (
         <div key={current + index}>
           <div className="reminder">{current.reminder}</div>
-          <button>Remove</button>
+          <button onClick={() => this.removeReminder(current.id)}>Remove</button>
         </div>
       );
     });
@@ -124,14 +136,7 @@ export default class Home extends Component {
                   </div>
                 </div>
                 <div className="revenue-right">
-                  <Pie
-                    data={this.state.chartData}
-                    // width={100}
-                    // height={50}
-                    options={{
-                    //   maintainAspectRatio: false
-                    }}
-                  />
+                  <Pie data={this.state.chartData} options={{}} />
                 </div>
               </div>
             </div>
@@ -142,16 +147,27 @@ export default class Home extends Component {
               </div>
 
               <div className="weather-body">
-                <input
-                  className="weather-input"
-                  type="text"
-                  onChange={e => this.updateZip(e.target.value)}
-                />
-                <button onClick={() => this.submitZip()}>Submit</button>
-                <div id="weather-city">{this.state.city}</div>
-                <div id="weather-description">{this.state.description}</div>
-                <img id="weather-pic" src={this.state.weatherpic} />
-                <div id="weather-temperature">{this.state.temperature}</div>
+                <div className="weather-left">
+                  <input
+                    placeholder="Enter Zip Code"
+                    className="weather-input"
+                    type="text"
+                    onChange={e => this.updateZip(e.target.value)}
+                  />
+                  <button onClick={() => this.submitZip()}>Submit</button>
+                </div>
+                <div className="weather-results">
+                  <div>
+                    <div className="city-temp">
+                      <div id="weather-city">{this.state.city}</div>
+                      <div id="weather-temperature">
+                        {this.state.temperature}
+                      </div>
+                    </div>
+                    <div id="weather-description">{this.state.description}</div>
+                  </div>
+                  <img id="weather-pic" src={this.state.weatherpic} />
+                </div>
               </div>
             </div>
           </div>
@@ -164,8 +180,8 @@ export default class Home extends Component {
 
               <div className="reminders-body">
                 {reminders}
-                <input type="text" />
-                <button>Add</button>
+                <input type="text" onChange={(e) => this.addReminder(e.target.value)}/>
+                <button onClick={() => this.submitReminder()}>Add</button>
               </div>
             </div>
           </div>

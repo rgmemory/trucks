@@ -9,6 +9,7 @@ require('dotenv').config();
 //truckdrivers
 //trucktrucks
 //truckjobs
+//truckreminders
 //https://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=1111111111
 
 //https://api.openweathermap.org/data/2.5/weather?zip=84663&APPID=e5b6604c2f44977a986dfaa20987dfd5
@@ -49,3 +50,7 @@ app.get('/api/getpayroll', controller.getpayroll)
 app.delete('/api/deletejob/:index', controller.deletejob)
 
 app.get('/api/revenue', controller.getRevenue)
+
+app.delete('/api/removeReminder/:index', controller.removeReminder)
+
+app.post('/api/submitReminder', controller.submitReminder)

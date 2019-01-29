@@ -1,0 +1,1 @@
+delete from truckreminders where id = $1;

@@ -119,8 +119,26 @@ module.exports = {
 
     getRevenue: function(req, res){
         req.app.get('db').get_revenue().then(response => {
-            console.log('revenue works', response)
+            // console.log('revenue works', response)
             res.send(response)
+        })
+    },
+
+    removeReminder: function(req, res){
+        console.log(req.params.index)
+
+        req.app.get('db').remove_reminder([req.params.index]).then(response => {
+            console.log('reminder, removed')
+            res.sendStatus(200)
+        })
+    },
+
+    submitReminder: function(req, res){
+        console.log('submit', req.body.reminder)
+
+        req.app.get('db').submit_reminder(req.body.reminder).then(response => {
+            console.log(response)
+            res.sendStatus(200)
         })
     }
 }
