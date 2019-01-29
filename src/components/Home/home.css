@@ -2,6 +2,7 @@
     /* border: solid red 2px; */
     height: 100%;
     width: 100%;
+    font-style: impact;
 }
 
 #home-body{
@@ -12,7 +13,7 @@
 }
 
 #home-left{    
-    border: solid green 2px;
+    /* border: solid green 2px; */
     height: 100%;
     width: 65%;
     display: flex;
@@ -24,18 +25,70 @@
 }
 
 #revenue{
-    border: solid #ccc 1px;
-    height: 280px;
-    width: 90%;
-    padding: 10px;
+    /* border: solid #ccc 1px; */
+    height: 300px;
+    width: 95%;
+    padding-left: 10px;
     /* margin: auto; */
 }
 
+.revenue-body{
+    border: solid gray 1px;
+    display: flex;
+    justify-content: space-between;
+    height: 90%;
+    
+}
+
+.revenue-left{
+    border: solid gray 1px;
+    height: 100%;
+    /* width: 50px; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+}
+
+.revenue-item{
+    height: 33%;
+    border: solid gray 1px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.revenue-item p{
+    padding-top: 5px;
+    padding-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    font-style: impact;
+}
+
+.revenue-item div{
+    color: gray;
+    font-size: 20px;
+}
+
+.revenue-right{
+    /* border: solid gray 1px; */
+    /* height: 100%; */
+    width: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #weather{
-    border: solid #ccc 1px;
+    /* border: solid #ccc 1px; */
     height: 270px;
-    width: 90%;
+    width: 95%;
     padding: 10px;
+}
+
+.weather-body{
+    border: solid blue 1px;
 }
 
 .weather-input{
@@ -52,7 +105,7 @@
 #home-right{    
     /* border: solid #ccc 1px; */
     padding: 10px;
-    border: solid yellow 1px;
+    /* border: solid yellow 1px; */
     height: 100%;
     width: 35%;
 }
@@ -61,4 +114,22 @@
     border: solid #ccc 1px;
     height: 300px;
     width: 100%;
+}
+
+.reminders-body{
+    border: solid blue 1px;
+}
+
+.home-header{
+    border: solid red 1px;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+
+.home-title{
+    color: gray;
+    margin: auto;
+    font-size: 25px;
 }
