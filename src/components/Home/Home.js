@@ -12,40 +12,40 @@ export default class Home extends Component {
       reminders: [],
       revenue: null,
       expenses: null,
-      reminder: ''
+      reminder: ""
     };
   }
 
   removeReminder = value => {
-      console.log(value)
-      axios.delete(`/api/removeReminder/${value}`).then(res => {
-          axios.get('/api/getreminders').then(response => {
-              console.log('the reminders are', response)
-              this.setState({
+    console.log(value);
+    axios.delete(`/api/removeReminder/${value}`).then(res => {
+      axios.get("/api/getreminders").then(response => {
+        console.log("the reminders are", response);
+        this.setState({
+          reminders: response.data
+        });
+      });
+    });
+  };
 
-                  reminders: response.data
-              })
-          })
-    })
-      
-  }
-
-  addReminder = (value) => {
+  addReminder = value => {
     this.setState({
-        reminder: value
-    })
-  }
+      reminder: value
+    });
+  };
 
   submitReminder = () => {
-
-      axios.post('/api/submitReminder', {reminder: this.state.reminder}).then(response => {
-          axios.get('/api/getreminders').then(res => {
-            this.setState({
-                reminders: res.data
-            })
-        })
-      })
-  }
+    axios
+      .post("/api/submitReminder", { reminder: this.state.reminder })
+      .then(response => {
+        axios.get("/api/getreminders").then(res => {
+          this.setState({
+            reminders: res.data,
+            reminder: ''
+          });
+        });
+      });
+  };
 
   updateZip = value => {
     this.setState({
@@ -73,7 +73,7 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.get("/api/getreminders").then(res => {
-        console.log(res, 'reminders')
+      console.log(res, "reminders");
       let tempRevenue = 0;
       let tempExpenses = 0;
       axios.get("/api/revenue").then(response => {
@@ -105,9 +105,12 @@ export default class Home extends Component {
   render() {
     let reminders = this.state.reminders.map((current, index) => {
       return (
-        <div key={current + index}>
-          <div className="reminder">{current.reminder}</div>
-          <button onClick={() => this.removeReminder(current.id)}>Remove</button>
+        <div className="reminder-block" key={current + index}>
+          <div className="reminder">{current.reminder}
+          <button onClick={() => this.removeReminder(current.id)}>
+            Remove
+          </button>
+          </div>
         </div>
       );
     });
@@ -179,9 +182,15 @@ export default class Home extends Component {
               </div>
 
               <div className="reminders-body">
-                {reminders}
-                <input type="text" onChange={(e) => this.addReminder(e.target.value)}/>
-                <button onClick={() => this.submitReminder()}>Add</button>
+                <div className="individual-reminder">{reminders}</div>
+                <div className="reminder-input">
+                  <input
+                    type="text"
+                    value={this.state.reminder}
+                    onChange={e => this.addReminder(e.target.value)}
+                  />
+                  <button onClick={() => this.submitReminder()}>Add</button>
+                </div>
               </div>
             </div>
           </div>
