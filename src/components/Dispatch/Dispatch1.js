@@ -17,22 +17,29 @@ class Dispatch1 extends Component{
 
         return(
             <div id="dispatch1">
-                <p>Enter Job Details</p>
+                <div className="dispatch-title"><p>Enter Job Details</p></div>
 
 
-                <p>Shipper</p>
-                <input type="text" onChange={(e) => this.props.handleShipper(e.target.value)}/>
-                 <p>PickUp Address</p>
-                <input type="text" onChange={(e) => this.props.handlePickup(e.target.value)}/>
-                <p>Destination Address</p>
-                <input type="text" onChange={(e) => this.props.handleDestination(e.target.value)}/>
-                <p>Pay</p>
-                <input type="text" onChange={(e) => this.props.handleRate(e.target.value)}/>
-                <p>Date</p>
-                <input type="text" onChange={(e) => this.props.handleDate(e.target.value)}/>
+                <div className="dispatch1-body">
+
+                <div className="dispatch-item"><p>Shipper</p></div>
+                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handleShipper(e.target.value)}/></div>
                 
-                <div>
+                <div className="dispatch-item"><p>PickUp Address</p></div>
+                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handlePickup(e.target.value)}/></div>
+                
+                <div className="dispatch-item"><p>Destination Address</p></div>
+                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handleDestination(e.target.value)}/></div>
+                
+                <div className="dispatch-item"><p>Pay</p></div>
+                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handleRate(e.target.value)}/></div>
+                
+                <div className="dispatch-item"><p>Date</p></div>
+                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handleDate(e.target.value)}/></div>
+                
+                <div className="dispatch-submit">
                     <Link to="/dispatch2"><button >Next</button></Link>
+                </div>
                 </div>
             </div>
         )

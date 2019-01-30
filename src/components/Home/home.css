@@ -138,8 +138,8 @@
 #weather-pic{
     height: auto;
     width: auto;
-    min-width: 70px;
-    min-height: 70px;
+    min-width: 60px;
+    min-height: 60px;
     /* border-color: white; */
 }
 
@@ -245,6 +245,7 @@
     border-style:solid;
     border: solid #ccc .5px;
     height: 25px;
+    width: 170px;
 }
 
 .reminder-input button{
