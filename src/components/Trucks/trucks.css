@@ -20,21 +20,21 @@
     height: 30px;
     width: 70px;
     margin-right: 15px;
-    color: white;
+    color: black;
 }
 
 .change-button:hover{
     opacity: .6;
-    color: black;
+    color: white;
     cursor: pointer;
 }
 
 .edit{
-    background-color: dodgerblue;
+    background-color: #00BD35;
 }
 
 .delete{
-    background-color: lightgreen;
+    background-color: #ccc;
 }
 
 

@@ -2,7 +2,9 @@
     /* border: solid black 1px; */
     height: 100%;
     width: 100%;
-    background-color: green;
+    background-color: #EAEBEC;
+    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+    border: solid #ccc .5px;
     /* font-family: "Open Sans",Arial,sans-serif; */
 }
 
@@ -18,7 +20,7 @@
     margin-top: 15px;
     border: none;
     font-size: 25px;
-    color: white;
+    color: black;
     outline: none;
     font-family: Helvetica Neue;
     transition: color 0.2s;

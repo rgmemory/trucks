@@ -89,7 +89,7 @@ export default class Home extends Component {
               datasets: [
                 {
                   data: [tempRevenue, tempRevenue - tempExpenses, tempExpenses],
-                  backgroundColor: ["red", "green", "yellow"]
+                  backgroundColor: ["red", "#15BC44", "yellow"]
                 }
               ]
             }
@@ -117,13 +117,13 @@ export default class Home extends Component {
 
     return (
       <div id="home">
-      <div id="app-header">Home</div>
+      <div id="app-header"><p>Home</p></div>
         <div id="home-body">
           <div id="home-left">
             <div id="revenue">
               <div className="home-header">
                 <div className="home-title tooltip">
-                  Revenue Overview
+                  Finances
                   <div className="tooltiptext">Chart JS</div>
                 </div>
               </div>

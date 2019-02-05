@@ -21,7 +21,7 @@ class Dispatch2 extends Component {
     });
   }
 
-  dispatch = (index, name) => {
+  dispatch = (index, name, email) => {
     axios
       .post("/api/dispatch", {
         index,
@@ -30,7 +30,8 @@ class Dispatch2 extends Component {
         pickup: this.props.pickup,
         destination: this.props.destination,
         date: this.props.date,
-        rate: this.props.rate
+        rate: this.props.rate,
+        email
       })
       .then(res => {});
   };
@@ -45,10 +46,15 @@ class Dispatch2 extends Component {
           </div>
           <div className="dispatch-submit">
             <Link to="/home">
-              <button className="dispatch-button"
+              <button
+                className="dispatch-button"
                 onClick={() => {
-                  alert('dispatch made')
-                  this.dispatch(index, current.first);
+                  alert(
+                    `A dispatch has been made to ${
+                      current.first
+                    }. It was sent to the email on file: ${current.email}`
+                  );
+                  this.dispatch(current.id, current.first, current.email);
                 }}
               >
                 Dispatch
@@ -61,12 +67,13 @@ class Dispatch2 extends Component {
 
     return (
       <div id="dispatch2">
-      <div id="app-header">Dispatch</div>
+        <div id="app-header">Dispatch</div>
+      <div className="dispatch-container">
         <div className="dispatch">
           <div className="job-details">
-          <div className="dispatch-title">
-            <p>JOB DETAILS</p>
-          </div>
+            <div className="dispatch-title">
+              <p>JOB DETAILS</p>
+            </div>
             {/* <div className="job-detail">
               Shipper: <p>{this.props.shipper}</p>
             </div> */}
@@ -80,23 +87,28 @@ class Dispatch2 extends Component {
               Date:<p>{this.props.date}</p>
             </div> */}
             <div className="job-detail">
-              Payment:<p>{this.props.rate}</p>
+              Payment:<p>${this.props.rate}</p>
             </div>
           </div>
         </div>
 
         <div className="select-driver">
           <div className="display-drivers">
-            <div className="display-select-driver">Select driver to dispatch</div>
+            <div className="display-select-driver tooltip">
+            <div className="tooltiptext">Nodemailer</div>
+              <p>Select driver to dispatch</p>
+            </div>
           </div>
           {displayDrivers}
+        </div>
         </div>
 
         <div className="dispatch-submit">
           <Link to="/dispatch1">
-            <button className="dispatch-submit-button">Previous</button>
+            {/* <button className="dispatch-submit-button">Previous</button> */}
           </Link>
         </div>
+        
       </div>
     );
   }

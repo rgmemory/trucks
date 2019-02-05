@@ -1,262 +1,248 @@
-#home{
-    /* border: solid red 2px; */
-    height: 100%;
-    width: 100%;
-    font-style: impact;
+#home {
+  height: 100%;
+  width: 100%;
+  font-style: impact;
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#home-body{
-    /* border: solid blue 1px; */
-    display: flex;
-    height: 100%;
-    width: 100%;
+#home-body {
+  display: flex;
+  height: 100%;
+  width: 100%;
 }
 
-#home-left{    
-    /* border: solid green 2px; */
-    height: 100%;
-    width: 65%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    /* margin: auto; */
-    padding: 10px;
-    box-sizing: border-box;
+#home-left {
+  height: 100%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10px;
+  box-sizing: border-box;
 }
 
-#revenue{
-    /* border: solid #ccc 1px; */
-    height: 300px;
-    width: 95%;
-    padding-left: 10px;
-    /* margin: auto; */
+#revenue {
+  height: 300px;
+  width: 95%;
+  padding-left: 10px;
 }
 
-.revenue-body{
-    border: solid gray 1px;
-    display: flex;
-    justify-content: space-between;
-    height: 100%;
-    
+.revenue-body {
+  border: solid #ccc .5px;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
 }
 
-.revenue-left{
-    border: solid gray 1px;
-    height: 100%;
-    /* width: 50px; */
-    display: flex;
-    flex-direction: column;
-    width: 25%;
+.revenue-left {
+  border: solid #ccc 1px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 25%;
 }
 
-.revenue-item{
-    height: 33%;
-    border: solid gray 1px;
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    flex-direction: column;
+.revenue-item {
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  height: 33%;
+  border: solid #ccc 1px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #EAEBEC;
+  
 }
 
-.revenue-item p{
-    padding-top: 5px;
-    padding-bottom: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    font-style: impact;
+.revenue-item p {
+  padding-top: 5px;
+  padding-bottom: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: impact;
+  color: gray;
 }
 
-.revenue-item div{
-    color: gray;
-    font-size: 20px;
+.revenue-item div {
+  color: #gray;
+  font-size: 20px;
 }
 
-.revenue-right{
-    /* border: solid gray 1px; */
-    /* height: 100%; */
-    width: 70%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.revenue-right {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-#weather{
-    /* border: solid #ccc 1px; */
-    height: 270px;
-    width: 95%;
-    padding: 10px;
-    margin-top: 60px;
-    
+#weather {
+  height: 270px;
+  width: 95%;
+  padding: 10px;
+  margin-top: 60px;
 }
 
-.weather-results{
-    /* border: solid green 1px; */
-    /* padding-top: 5px; */
-    width: 165px;
-    display: flex;
-    align-items: center;
+.weather-results {
+  width: 165px;
+  display: flex;
+  align-items: center;
 }
 
-.weather-body{
-    border: solid #ccc 1px;
-    display: flex;
-    justify-content: space-around;
-    height: 150px;
-    padding-right: 20px;
-
+.weather-body {
+  border: solid #ccc 1px;
+  display: flex;
+  justify-content: space-around;
+  height: 150px;
+  padding-right: 20px;
 }
 
-.weather-left{
-    /* border: solid black 3px; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.weather-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.weather-input{
-    outline: none;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-style:solid;
-    border: solid #ccc .5px;
-    height: 20px;
+.weather-input {
+  outline: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-style: solid;
+  border: solid #ccc 0.5px;
+  height: 20px;
 }
 
-.weather-body button{
-    background-color: green;
-    border-radius: 5px;
-    height: 30px;
-    outline: none;
-    width: 130px;
+.weather-body button {
+  background-color: #00BD35;
+  border-radius: 5px;
+  height: 30px;
+  outline: none;
+  width: 130px;
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  
 }
 
-.weather-body button:hover{
-    cursor: pointer;
+.weather-body button:hover {
+  cursor: pointer;
+  background-color: #0fe248;
 }
 
-#weather-pic{
-    height: auto;
-    width: auto;
-    min-width: 60px;
-    min-height: 60px;
-    /* border-color: white; */
+#weather-pic {
+  height: auto;
+  width: auto;
+  min-width: 60px;
+  min-height: 60px;
 }
 
-#weather-city{
-    font-size: 25px;
-    width: 127px;
+#weather-city {
+  font-size: 25px;
+  width: 127px;
 }
 
-#weather-temperature{
-    font-size: 25px;
-    margin-left: 10px;
+#weather-temperature {
+  font-size: 25px;
+  margin-left: 10px;
 }
 
-.city-temp{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.city-temp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-#home-right{    
-    border: solid black 1px;
-    padding: 10px;
-    /* border: solid yellow 1px; */
-    /* height: 100%; */
-    width: 35%;
+#home-right {
+  border: solid #ccc 1px;
+  margin: 10px;
+  width: 38%;
 }
 
-#reminders{
-    /* border: solid #ccc 1px; */
-    /* height: 300px; */
-    width: 100%;
+#reminders {
+  width: 100%;
 }
 
-.reminder-block{
-    /* border: solid black 1px; */
-    /* width: 90%; */
-    display: flex;
-    justify-content: center;
+.reminder-block {
+  display: flex;
+  justify-content: center;
+  color: gray;
 }
 
-.reminder-block button{
-    background-color: green;
-    border-radius: 5px;
-    height: 23px;
-    width: 70px;
-    outline: none;
+.reminder-block button {
+  background-color: #00BD35
+  ;
+  border-radius: 5px;
+  height: 23px;
+  width: 70px;
+  outline: none;
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.reminder-block button:hover{
-    cursor: pointer;
+.reminder-block button:hover {
+  cursor: pointer;
+  background-color: #0fe248;
 }
 
-.reminders-body{
-    /* border: solid blue 1px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100%;
+.reminders-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
 }
 
-.home-header{
-    border: solid #ccc 1px;
-    display: flex;
-    justify-content: center;
-    height: 50px;
+.home-header {
+  border: solid #ccc 1px;
+  display: flex;
+  justify-content: center;
+  height: 50px;
+  background-color: #EAEBEC;
 }
 
-
-.home-title{
-    color: gray;
-    margin: auto;
-    font-size: 25px;
+.home-title {
+  color: gray;
+  margin: auto;
+  font-size: 25px;
 }
 
-.individual-reminder{
-    /* border: solid red 1px; */
-    width: 90%;
-    margin-top: 10px;
-    margin-bottom: 25px;
+.individual-reminder {
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 25px;
 }
 
-.reminder{
-    padding-bottom: 5px;
-    margin: 10px 0px;
-    border-bottom: solid #ccc 1px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+.reminder {
+  padding-bottom: 5px;
+  margin: 10px 0px;
+  border-bottom: solid #ccc 1px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.reminder-input{
-    /* border: solid red 1px; */
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
+.reminder-input {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
 }
 
-.reminder-input input{
-    outline: none;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    border-style:solid;
-    border: solid #ccc .5px;
-    height: 25px;
-    width: 170px;
+.reminder-input input {
+  outline: none;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border-style: solid;
+  border: solid #ccc 0.5px;
+  height: 25px;
+  width: 170px;
 }
 
-.reminder-input button{
-    background-color: green;
-    border-radius: 5px;
-    height: 25px;
-    outline: none;
-    width: 70px;
-    outline: none;
+.reminder-input button {
+  background-color: #00BD35;
+  border-radius: 5px;
+  height: 25px;
+  outline: none;
+  width: 70px;
+  outline: none;
 }
 
-.reminder-input button:hover{
-    cursor: pointer;
+.reminder-input button:hover {
+  cursor: pointer;
+  background-color: #0fe248;
 }

@@ -31,8 +31,9 @@ function SimpleTable(props) {
           <TableRow>
             <TableCell>First</TableCell>
             <TableCell >Last</TableCell>
-            <TableCell numeric>Phone</TableCell>
+            {/* <TableCell numeric>Phone</TableCell> */}
             <TableCell >Station</TableCell>
+            <TableCell >Email</TableCell>
             <TableCell >Actions</TableCell>
             
           </TableRow>
@@ -43,8 +44,9 @@ function SimpleTable(props) {
               <TableRow key={row.phone + index}>
                 <TableCell >{row.first}</TableCell>
                 <TableCell >{row.last}</TableCell>
-                <TableCell numeric>{row.phone}</TableCell>
+                {/* <TableCell numeric>{row.phone}</TableCell> */}
                 <TableCell >{row.station}</TableCell>
+                <TableCell >{row.email}</TableCell>
                 
                 <TableCell >
                   <button  onClick={() => props.editDriver(row.id)} className="change-button edit">Edit</button>

@@ -36,9 +36,8 @@ export default class Payroll extends Component {
 
       return (
         <div className="payroll-items" key={current + index}>
-          {/* ID: {current.id} */}
           <div className="payroll-details">
-            <div className="payroll-item"><div className="payroll-item-name">Shipper:</div> {current.shipper}</div>
+            {/* <div className="payroll-item"><div className="payroll-item-name">Shipper:</div> {current.shipper}</div> */}
             <div className="payroll-item"><div className="payroll-item-name">Driver:</div> {current.name}</div>
           <div className="payroll-item"><div className="payroll-item-name">Total:</div> ${current.rate}</div>
           </div>
@@ -47,6 +46,7 @@ export default class Payroll extends Component {
           className="payroll-button"
             onClick={() => {
               this.payDriver(current.id);
+              alert(`${current.name} has been paid $${current.rate}.`)
             }}
           >
             Pay
@@ -59,9 +59,11 @@ export default class Payroll extends Component {
     return (
       <div className="payroll-big">
         <div id="app-header">Payroll</div>
+        <div className="payroll-container">
         <div className="payroll">
-          <div className="payroll-title">Payroll</div>
+          {/* <div className="payroll-title">Payroll</div> */}
           <div className="jobs-container">{displayJobs}</div>
+        </div>
         </div>
       </div>
     );
