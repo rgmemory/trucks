@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div id="app">
 
-        {this.props.location.pathname !== '/' ? 
+        {/* {this.props.location.pathname !== '/' ? 
         
         <div id="app-left">
           <Sidebar/>
@@ -19,10 +19,14 @@ class App extends Component {
         
         : 
         
-        null}
+        null} */}
+
+<div id="app-left">
+          <Sidebar/>
+        </div> 
 
         <div id="app-right">
-          <div id="app-header">HEADER</div>
+          {/* <div id="app-header">HEADER</div> */}
             <div id="app-routes">
               {Routes}
             </div>

@@ -11,7 +11,7 @@ import Trucks from './components/Trucks/Trucks'
 
 export default(
     <Switch>
-        <Route exact path="/" component={Landing}/>
+        <Route exact path="/" component={Home}/>
         <Route path="/home" component={Home}/>
         <Route path="/dispatch1" component={Dispatch1}/>
         <Route path="/dispatch2" component={Dispatch2}/>

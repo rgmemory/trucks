@@ -117,11 +117,15 @@ export default class Home extends Component {
 
     return (
       <div id="home">
+      <div id="app-header">Home</div>
         <div id="home-body">
           <div id="home-left">
             <div id="revenue">
               <div className="home-header">
-                <div className="home-title">Revenue Overview</div>
+                <div className="home-title tooltip">
+                  Revenue Overview
+                  <div className="tooltiptext">Chart JS</div>
+                </div>
               </div>
               <div className="revenue-body">
                 <div className="revenue-left">
@@ -146,7 +150,10 @@ export default class Home extends Component {
 
             <div id="weather">
               <div className="home-header">
-                <div className="home-title">Weather Center</div>
+                <div className="home-title tooltip">
+                Weather Center
+                <div className="tooltiptext">openweathermap.org API</div>
+                </div>
               </div>
 
               <div className="weather-body">

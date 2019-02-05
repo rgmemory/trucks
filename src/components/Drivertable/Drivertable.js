@@ -20,21 +20,6 @@ const styles = theme => ({
   },
 });
 
-// let id = 0;
-// function createData(name, calories, fat, carbs, protein) {
-//   id += 1;
-//   return { id, name, calories, fat, carbs, protein };
-// }
-
-// const rows = [
-//   createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-//   createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-//   createData('Eclair', 262, 16.0, 24, 6.0),
-//   createData('Cupcake', 305, 3.7, 67, 4.3),
-//   createData('Gingerbread', 356, 16.0, 49, 3.9),
-// ];
-
-
 function SimpleTable(props) {
   const { classes } = props;
     
@@ -53,16 +38,16 @@ function SimpleTable(props) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.drivers.map(row => {
+          {props.drivers.map((row, index) => {
             return (
-              <TableRow key={row.phone}>
+              <TableRow key={row.phone + index}>
                 <TableCell >{row.first}</TableCell>
                 <TableCell >{row.last}</TableCell>
                 <TableCell numeric>{row.phone}</TableCell>
                 <TableCell >{row.station}</TableCell>
                 
                 <TableCell >
-                  <button  onClick={() => props.editDriver()} className="change-button edit">Edit</button>
+                  <button  onClick={() => props.editDriver(row.id)} className="change-button edit">Edit</button>
                   <button onClick={() => props.deleteDriver(row.id)} className="change-button delete">Delete</button>
                 </TableCell>
 

@@ -29,7 +29,19 @@ module.exports = {
     submitDriver: function(req, res){
         let {first, last, phone, station} = req.body
 
+        console.log('driver to add backend', req.body)
+
         req.app.get('db').add_driver([first, last, phone, station]).then(response => {
+            res.sendStatus(200);
+        })
+    },
+
+    editDriverInfo: function(req, res){
+        console.log('editdriver info', req.body)
+
+        let {first, last, phone, station, driverEditIndex} = req.body;
+        req.app.get('db').edit_driver(first, last, phone, station, driverEditIndex).then(response => {
+            console.log('updated info on backedn with edit driver')
             res.sendStatus(200);
         })
     },
@@ -41,7 +53,7 @@ module.exports = {
     },
 
     dispatch: function(req, res){
-        let {name, shipper, pickup, destination, date, rate} = req.body
+        let {index, name, shipper, pickup, destination, date, rate} = req.body
 
         // const dispatchOutput = `
         //     <p>You have been dispatched</p>

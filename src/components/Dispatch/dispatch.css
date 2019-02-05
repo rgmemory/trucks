@@ -15,6 +15,12 @@
 }
 
 .dispatch-title{
+    border-bottom: solid black 1px;
+    height: 30px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    /* height: 100px; */
     /* border: solid black 1px; */
     /* display: flex; */
     /* justify-content: center;
@@ -25,8 +31,8 @@
 
 .dispatch1-body{
     /* border: solid red 1px; */
-    padding-left: 80px;
-    padding-top: 50px;
+    padding-left: 70px;
+    padding-top: 15px;
 }
 
 .dispatch-item{
@@ -38,7 +44,7 @@
 .dispatch-input{
     /* border: solid pink 1px; */
     margin-top: 8px;
-    margin-bottom: 24px;
+    margin-bottom: 14px;
     
 }
 
@@ -46,7 +52,7 @@
     /* border: solid pink 1px; */
     margin-bottom: 23px;
     width: 600px;
-    border-radius: 3px;
+    /* border-radius: 3px; */
     height: 22px;
     /* border: solid black 1px; */
     /* border: none; */
@@ -72,10 +78,6 @@
     border: solid gray 1px;
     width: 50%;
     margin-left: 80px;
-
-    /* display: flex;
-    justify-content: center; */
-    /* margin-left: 35px; */
 }
 
 .dispatch-button{
@@ -108,21 +110,24 @@
 }
 
 .display-select-driver{
-    height: 30px;
+    height: 32apx;
     font-size: 22px;
     border: solid gray 1px;
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
+    background-color: #ccc;
     /* padding-left: 20px; */
 }
 
 
 
 .job-details{
-    /* border: solid red 1px; */
+    border: solid black 1px;
     margin-left: 80px;
     margin-top: 25px;
+    width: 40%;
+
 }
 
 .job-detail{
@@ -131,8 +136,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 45%;
+    /* width: 5%; */
     height: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .name-dispatch{
@@ -146,4 +153,15 @@
 
 .dispatch-first{
     padding-right: 4px;
+}
+
+.dispatch-next{
+    border-radius: 5px;
+    color: green;
+    height: 30px;
+    width: 60px;
+}
+
+.dispatch-next:hover{
+    cursor: pointer;
 }

@@ -1,1 +1,2 @@
-select * from truckdrivers;
+select * from truckdrivers
+order by id;

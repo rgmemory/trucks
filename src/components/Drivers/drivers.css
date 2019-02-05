@@ -1,6 +1,7 @@
 #drivers{
     /* border: solid red 1px; */
-    width: 98%;
+    /* width: 98%; */
+    width: 100%;
     margin: auto;
     box-sizing: border-box;
 }
@@ -45,4 +46,9 @@
     max-height: 100%;
 }
 
+#drivers-table{
+    /* border: solid black 3px; */
+    width: 98%;
+    margin: auto;
+}
 

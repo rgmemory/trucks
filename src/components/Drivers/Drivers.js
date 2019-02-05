@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './drivers.css'
+// import '../../App.css'
 import axios from 'axios'
 import Simpletable from '../Drivertable/Drivertable'
 import plus from '../../images/plus.png'
@@ -17,7 +18,8 @@ export default class Drivers extends Component{
             first: '',
             last: '',
             phone: null,
-            station: ''
+            station: '',
+            driverEditIndex: null
         }
     }
 
@@ -28,6 +30,7 @@ export default class Drivers extends Component{
     }
 
     handleCloseModal = () => {
+        // console.log('1')
         this.setState({
             showModal: false
         })
@@ -36,7 +39,7 @@ export default class Drivers extends Component{
     }
 
     showEditModal = () => {
-        console.log('Show')
+        // console.log('Show')
         this.setState({
             showEditModal: true
         })
@@ -44,12 +47,43 @@ export default class Drivers extends Component{
     }
 
     hideEditModal = () => {
-        console.log('hide edit modal')
+        console.log('1should click eddit driver')
         this.setState({
             showEditModal: false
         })
+
+        this.submitEditDriver()
     }
 
+    editDriverInfo = (value) => {
+        this.showEditModal()
+        console.log(value)
+        this.setState({
+            driverEditIndex: value
+        })
+        
+    }
+    
+    submitEditDriver = () => {
+        console.log('submit edit driver')
+
+      let {first, last, phone, station, driverEditIndex} = this.state
+      console.log('2editdriver latest', first, last, phone, station, driverEditIndex)
+
+      if(first && last && phone && station && driverEditIndex){
+          axios.post('/api/editDriverInfo', {first, last, phone, station, driverEditIndex}).then(res => {
+              axios.get('/api/getdrivers').then(res => {
+                  console.log('get inside of edit')
+                  this.setState({
+                      drivers: res.data
+                  })    
+              })
+          })
+      }
+      // else{
+      //     alert('Please fill out all fields')
+      // }
+    }
     componentDidMount(){
         axios.get('/api/getdrivers').then(res => {
             this.setState({
@@ -80,6 +114,8 @@ export default class Drivers extends Component{
     }
 
     modalSubmit = () => {
+
+        // console.log('2 modal submit clicked')
 
         let {first, last, phone, station} = this.state
 
@@ -115,21 +151,21 @@ export default class Drivers extends Component{
         })
       }
 
-      editDriver = () => {
-          console.log('edit driver')
-          this.showEditModal()
-      }
 
     render(){
 
         return(
-            <div id="drivers">
+            <div id="drivers" >
+                        <div id="app-header" >
+                        Drivers
+                        </div>
+
 
                     <div id="drivers-table">
-                        <Simpletable drivers={this.state.drivers} deleteDriver={this.deleteDriver} editDriver={this.editDriver} />
+                        <Simpletable drivers={this.state.drivers} deleteDriver={this.deleteDriver} editDriver={this.editDriverInfo} />
                     </div>
 
-                    <div id="drivers-add">
+                    <div id="drivers-add" >
                         <button onClick={this.handleOpenModal}><img src={plus} alt="plus sign"/>Add Driver</button>
                     </div>
 

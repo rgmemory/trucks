@@ -1,13 +1,14 @@
 #sidebar{
-    border: solid black 1px;
+    /* border: solid black 1px; */
     height: 100%;
     width: 100%;
-    background-color: dodgerblue;
+    background-color: green;
     /* font-family: "Open Sans",Arial,sans-serif; */
 }
 
 #sidebar-buttons{
-    margin-top: 50px;
+    /* margin-top: 50px; */
+    padding-top: 60px;
 }
 
 #sidebar button{
@@ -20,13 +21,22 @@
     color: white;
     outline: none;
     font-family: Helvetica Neue;
+    transition: color 0.2s;
 }
 
 #sidebar button:hover{
     
+    color: #c4c5c6;
+    cursor: pointer;
+    /* border-bottom: solid #ccc 1px; */
+}
+
+/* #sidebar button p:hover{
+    
     color: #ccc;
     cursor: pointer;
-}
+    border-bottom: solid #ccc 1px;
+} */
 
 #sidebar button:visited{
     

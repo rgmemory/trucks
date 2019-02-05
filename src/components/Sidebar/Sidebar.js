@@ -29,8 +29,8 @@ export default class Sidebar extends Component{
                     <Link to="/home"><button onClick={() => this.toggleUnderline()}>Home</button></Link>
                     <Link to="/drivers"><button>Drivers</button></Link>
                     {/* <Link to="/trucks"><button>Trucks</button></Link> */}
-                    <Link to="/payroll"><button>Payroll</button></Link>
                     <Link to="/dispatch1"><button>Dispatch</button></Link>
+                    <Link to="/payroll"><button>Payroll</button></Link>
                 </div>
 
             </div>

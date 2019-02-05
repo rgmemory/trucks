@@ -1,0 +1,57 @@
+.payroll{
+    /* border: solid black 1px; */
+    width: 50%;
+    margin-top: 5%;
+    margin-left: 10%;
+
+}
+
+.payroll-items{
+    border: solid #ccc .5px;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    margin-top: 15px;
+}
+
+.payroll-item{
+    padding-left: 3px;
+    padding-right: 25px;
+    border-right: solid .5px #ccc;
+}
+
+.jobs-container{
+    /* border: solid yellow 1px; */
+}
+
+.payroll-title{
+    font-size: 25px;
+}
+
+.payroll-details{
+    /* border: solid pink 1px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.payroll-payment{
+    /* border: solid green 2px; */
+}
+
+.payroll-button{
+    color: green;
+    height: 30px;
+    width: 60px;
+    border-radius: 5px;
+}
+
+.payroll-button:hover{
+    cursor: pointer;
+}
+
+.payroll-item-name{
+    font-weight: bold;
+}

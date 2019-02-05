@@ -54,3 +54,5 @@ app.get('/api/revenue', controller.getRevenue)
 app.delete('/api/removeReminder/:index', controller.removeReminder)
 
 app.post('/api/submitReminder', controller.submitReminder)
+
+app.post('/api/editDriverInfo', controller.editDriverInfo)

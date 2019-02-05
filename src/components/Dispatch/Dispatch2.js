@@ -24,6 +24,7 @@ class Dispatch2 extends Component {
   dispatch = (index, name) => {
     axios
       .post("/api/dispatch", {
+        index,
         name,
         shipper: this.props.shipper,
         pickup: this.props.pickup,
@@ -46,6 +47,7 @@ class Dispatch2 extends Component {
             <Link to="/home">
               <button className="dispatch-button"
                 onClick={() => {
+                  alert('dispatch made')
                   this.dispatch(index, current.first);
                 }}
               >
@@ -59,23 +61,24 @@ class Dispatch2 extends Component {
 
     return (
       <div id="dispatch2">
+      <div id="app-header">Dispatch</div>
         <div className="dispatch">
+          <div className="job-details">
           <div className="dispatch-title">
             <p>JOB DETAILS</p>
           </div>
-          <div className="job-details">
-            <div className="job-detail">
+            {/* <div className="job-detail">
               Shipper: <p>{this.props.shipper}</p>
-            </div>
+            </div> */}
             <div className="job-detail">
               Pickup:<p>{this.props.pickup}</p>
             </div>
             <div className="job-detail">
               Destination:<p>{this.props.destination}</p>
             </div>
-            <div className="job-detail">
+            {/* <div className="job-detail">
               Date:<p>{this.props.date}</p>
-            </div>
+            </div> */}
             <div className="job-detail">
               Payment:<p>{this.props.rate}</p>
             </div>
@@ -84,7 +87,7 @@ class Dispatch2 extends Component {
 
         <div className="select-driver">
           <div className="display-drivers">
-            <div className="display-select-driver">Select a driver to dispatch</div>
+            <div className="display-select-driver">Select driver to dispatch</div>
           </div>
           {displayDrivers}
         </div>
