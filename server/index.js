@@ -29,7 +29,7 @@ massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
 })
 
-app.listen(3005, function(){
+app.listen(3500, function(){
     console.log('listening on 3005')
 })
 
