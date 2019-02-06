@@ -1,4 +1,4 @@
-
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const controller = require('./controller')
@@ -20,6 +20,7 @@ let {CONNECTION_STRING,
 } = process.env
 
 let app = express();
+app.use(express.static(path.join(__dirname, '../build')))
 
 app.use(bodyParser.json());
 
