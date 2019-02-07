@@ -1,7 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 
-import Landing from './components/Landing/Landing'
+// import Landing from './components/Landing/Landing'
 import Home from './components/Home/Home'
 import Dispatch1 from './components/Dispatch/Dispatch1'
 import Dispatch2 from './components/Dispatch/Dispatch2'
