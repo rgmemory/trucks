@@ -4,6 +4,8 @@
     width: 100%;
     margin: auto;
     box-sizing: border-box;
+    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+    
 }
 
 #drivers-add{
@@ -43,8 +45,8 @@
 #drivers-add img{
     height: auto;
     width: auto;
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 70%;
+    max-height: 90%;
 }
 
 #drivers-table{

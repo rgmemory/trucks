@@ -65,22 +65,22 @@ export default class Drivers extends Component {
   submitEditDriver = () => {
     console.log("submit edit driver");
 
-    let { first, last, phone, station, driverEditIndex } = this.state;
+    let { first, last, email, station, driverEditIndex } = this.state;
     console.log(
       "2editdriver latest",
       first,
       last,
-      phone,
+      email,
       station,
       driverEditIndex
     );
 
-    if (first && last && phone && station && driverEditIndex) {
+    if (first && last && email && station && driverEditIndex) {
       axios
         .post("/api/editDriverInfo", {
           first,
           last,
-          phone,
+          email,
           station,
           driverEditIndex
         })
@@ -141,7 +141,7 @@ export default class Drivers extends Component {
     this.updateStation();
     this.updateEmail();
 
-    if (first && last && phone && station && email) {
+    if (first && last && station && email) {
       axios
         .post("/api/submitdriver", { first, last, phone, station, email })
         .then(res => {
@@ -216,11 +216,11 @@ export default class Drivers extends Component {
               />
             </div>
             <div className="truck-input-unit">
-              <p>Phone</p>
+              <p>Email</p>
               <input
                 type="text"
                 onChange={e => {
-                  this.updatePhone(e.target.value);
+                  this.updateEmail(e.target.value);
                 }}
               />
             </div>
@@ -267,15 +267,15 @@ export default class Drivers extends Component {
                 }}
               />
             </div>
-            <div className="truck-input-unit">
-              <p>Phone</p>
+            {/* <div className="truck-input-unit">
+              <p>Email</p>
               <input
                 type="text"
                 onChange={e => {
                   this.updatePhone(e.target.value);
                 }}
               />
-            </div>
+            </div> */}
             <div className="truck-input-unit">
               <p>Email</p>
               <input

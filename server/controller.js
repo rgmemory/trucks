@@ -53,10 +53,10 @@ module.exports = {
   },
 
   editDriverInfo: function(req, res) {
-    let { first, last, phone, station, driverEditIndex } = req.body;
+    let { first, last, email, station, driverEditIndex } = req.body;
     req.app
       .get("db")
-      .edit_driver(first, last, phone, station, driverEditIndex)
+      .edit_driver(first, last, email, station, driverEditIndex)
       .then(response => {
         res.sendStatus(200);
       });

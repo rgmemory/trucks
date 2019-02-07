@@ -98,7 +98,7 @@
 #truck-modal-bottom button{
     height: 35px;
     width: 130px;
-    background-color: dodgerblue;
+    background-color: #1CBB3E;
     border-radius: 7px;
     outline: none;
     border: none;
@@ -109,7 +109,7 @@
 #truck-modal-bottom button:hover{
     height: 35px;
     width: 130px;
-    background-color: green;
+    background-color: #0fe248;
     border-radius: 7px;
     cursor: pointer;
     color: white;

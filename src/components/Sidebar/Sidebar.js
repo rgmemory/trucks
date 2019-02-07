@@ -26,11 +26,11 @@ export default class Sidebar extends Component{
 
                 <div id="sidebar-buttons">
                     {/* <Link to="/home"><button className=`${}` onClick={() => this.toggleUnderline()}>Home</button></Link> */}
-                    <Link to="/home"><button onClick={() => this.toggleUnderline()}>Home</button></Link>
-                    <Link to="/drivers"><button>Drivers</button></Link>
+                    <Link to="/home"><button onClick={() => this.toggleUnderline()}><p>Home</p></button></Link>
+                    <Link to="/drivers"><button><p>Drivers</p></button></Link>
                     {/* <Link to="/trucks"><button>Trucks</button></Link> */}
-                    <Link to="/dispatch1"><button>Dispatch</button></Link>
-                    <Link to="/payroll"><button>Payroll</button></Link>
+                    <Link to="/dispatch1"><button><p>Dispatch</p></button></Link>
+                    <Link to="/payroll"><button><p>Payroll</p></button></Link>
                 </div>
 
             </div>

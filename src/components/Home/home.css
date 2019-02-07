@@ -22,7 +22,7 @@
 }
 
 #revenue {
-  height: 300px;
+  height: 52%;
   width: 95%;
   padding-left: 10px;
 }
@@ -32,10 +32,11 @@
   display: flex;
   justify-content: space-between;
   height: 100%;
+  box-sizing: border-box;
 }
 
 .revenue-left {
-  border: solid #ccc 1px;
+  /* border: solid #ccc 1px; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -44,10 +45,11 @@
 
 .revenue-item {
   font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
-  height: 33%;
+  height: 32.8%;
   border: solid #ccc 1px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   background-color: #EAEBEC;
   
@@ -189,7 +191,7 @@
 }
 
 .home-header {
-  border: solid #ccc 1px;
+  border: solid #ccc .5px;
   display: flex;
   justify-content: center;
   height: 50px;

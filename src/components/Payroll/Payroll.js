@@ -32,12 +32,10 @@ export default class Payroll extends Component {
 
   render() {
     let displayJobs = this.state.job.map((current, index) => {
-      console.log(current);
 
       return (
         <div className="payroll-items" key={current + index}>
           <div className="payroll-details">
-            {/* <div className="payroll-item"><div className="payroll-item-name">Shipper:</div> {current.shipper}</div> */}
             <div className="payroll-item"><div className="payroll-item-name">Driver:</div> {current.name}</div>
           <div className="payroll-item"><div className="payroll-item-name">Total:</div> ${current.rate}</div>
           </div>
@@ -58,7 +56,7 @@ export default class Payroll extends Component {
 
     return (
       <div className="payroll-big">
-        <div id="app-header">Payroll</div>
+        <div id="app-header"><p>Payroll</p></div>
         <div className="payroll-container">
         <div className="payroll">
           {/* <div className="payroll-title">Payroll</div> */}

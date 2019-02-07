@@ -13,7 +13,14 @@
     padding-top: 60px;
 }
 
+#sidebar-buttons p{
+    /* margin-top: 50px; */
+    padding-top: 60px;
+    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+}
+
 #sidebar button{
+    /* font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif; */
     background-color: transparent;
     height: 50px;
     width: 100%;
