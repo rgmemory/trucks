@@ -28,7 +28,7 @@
 }
 
 .revenue-body {
-  border: solid #ccc .5px;
+  border: solid #ccc 0.5px;
   display: flex;
   justify-content: space-between;
   height: 100%;
@@ -36,7 +36,6 @@
 }
 
 .revenue-left {
-  /* border: solid #ccc 1px; */
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -51,8 +50,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #EAEBEC;
-  
+  background-color: #eaebec;
 }
 
 .revenue-item p {
@@ -65,7 +63,7 @@
 }
 
 .revenue-item div {
-  color: #gray;
+  color: gray;
   font-size: 20px;
 }
 
@@ -114,13 +112,12 @@
 }
 
 .weather-body button {
-  background-color: #00BD35;
+  background-color: #00bd35;
   border-radius: 5px;
   height: 30px;
   outline: none;
   width: 130px;
   font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
-  
 }
 
 .weather-body button:hover {
@@ -168,8 +165,7 @@
 }
 
 .reminder-block button {
-  background-color: #00BD35
-  ;
+  background-color: #00bd35;
   border-radius: 5px;
   height: 23px;
   width: 70px;
@@ -191,11 +187,11 @@
 }
 
 .home-header {
-  border: solid #ccc .5px;
+  border: solid #ccc 0.5px;
   display: flex;
   justify-content: center;
   height: 50px;
-  background-color: #EAEBEC;
+  background-color: #eaebec;
 }
 
 .home-title {
@@ -236,7 +232,7 @@
 }
 
 .reminder-input button {
-  background-color: #00BD35;
+  background-color: #00bd35;
   border-radius: 5px;
   height: 25px;
   outline: none;

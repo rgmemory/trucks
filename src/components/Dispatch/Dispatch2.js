@@ -68,47 +68,40 @@ class Dispatch2 extends Component {
     return (
       <div id="dispatch2">
         <div id="app-header">Dispatch</div>
-      <div className="dispatch-container">
-        <div className="dispatch">
-          <div className="job-details">
-            <div className="dispatch-title">
-              <p>JOB DETAILS</p>
-            </div>
-            {/* <div className="job-detail">
-              Shipper: <p>{this.props.shipper}</p>
-            </div> */}
-            <div className="job-detail">
-              Pickup:<p>{this.props.pickup}</p>
-            </div>
-            <div className="job-detail">
-              Destination:<p>{this.props.destination}</p>
-            </div>
-            {/* <div className="job-detail">
-              Date:<p>{this.props.date}</p>
-            </div> */}
-            <div className="job-detail">
-              Payment:<p>${this.props.rate}</p>
-            </div>
-          </div>
-        </div>
+        <div className="dispatch-container">
+          <div className="dispatch">
+            <div className="job-details">
+              <div className="dispatch-title">
+                <p>JOB DETAILS</p>
+              </div>
 
-        <div className="select-driver">
-          <div className="display-drivers">
-            <div className="display-select-driver tooltip">
-            <div className="tooltiptext">Nodemailer</div>
-              <p>Select driver to dispatch</p>
+              <div className="job-detail">
+                Pickup:<p>{this.props.pickup}</p>
+              </div>
+              <div className="job-detail">
+                Destination:<p>{this.props.destination}</p>
+              </div>
+
+              <div className="job-detail">
+                Payment:<p>${this.props.rate}</p>
+              </div>
             </div>
           </div>
-          {displayDrivers}
-        </div>
+
+          <div className="select-driver">
+            <div className="display-drivers">
+              <div className="display-select-driver tooltip">
+                <div className="tooltiptext">Nodemailer</div>
+                <p>Select driver to dispatch</p>
+              </div>
+            </div>
+            {displayDrivers}
+          </div>
         </div>
 
         <div className="dispatch-submit">
-          <Link to="/dispatch1">
-            {/* <button className="dispatch-submit-button">Previous</button> */}
-          </Link>
+          <Link to="/dispatch1" />
         </div>
-        
       </div>
     );
   }

@@ -41,7 +41,7 @@ export default class Home extends Component {
         axios.get("/api/getreminders").then(res => {
           this.setState({
             reminders: res.data,
-            reminder: ''
+            reminder: ""
           });
         });
       });
@@ -59,7 +59,6 @@ export default class Home extends Component {
 
   submitZip = () => {
     axios.post("/api/getweather", { zip: this.state.zip }).then(res => {
-      console.log(res.data.name, "res");
       this.setState({
         weatherpic: `http://openweathermap.org/img/w/${
           res.data.weather[0].icon
@@ -73,7 +72,6 @@ export default class Home extends Component {
 
   componentDidMount() {
     axios.get("/api/getreminders").then(res => {
-      console.log(res, "reminders");
       let tempRevenue = 0;
       let tempExpenses = 0;
       axios.get("/api/revenue").then(response => {
@@ -106,10 +104,11 @@ export default class Home extends Component {
     let reminders = this.state.reminders.map((current, index) => {
       return (
         <div className="reminder-block" key={current + index}>
-          <div className="reminder">{current.reminder}
-          <button onClick={() => this.removeReminder(current.id)}>
-            Remove
-          </button>
+          <div className="reminder">
+            {current.reminder}
+            <button onClick={() => this.removeReminder(current.id)}>
+              Remove
+            </button>
           </div>
         </div>
       );
@@ -117,7 +116,9 @@ export default class Home extends Component {
 
     return (
       <div id="home">
-      <div id="app-header"><p>Home</p></div>
+        <div id="app-header">
+          <p>Home</p>
+        </div>
         <div id="home-body">
           <div id="home-left">
             <div id="revenue">
@@ -151,8 +152,8 @@ export default class Home extends Component {
             <div id="weather">
               <div className="home-header">
                 <div className="home-title tooltip">
-                Weather Center
-                <div className="tooltiptext">openweathermap.org API</div>
+                  Weather Center
+                  <div className="tooltiptext">openweathermap.org API</div>
                 </div>
               </div>
 

@@ -1,78 +1,62 @@
-.payroll-big{
-    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
-
+.payroll-big {
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.payroll {
+  width: 75%;
 
-.payroll{
-    width: 75%;
-    /* margin-top: 5%; */
-    /* margin-left: 10%; */
-    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
-    border: solid #ccc 1px;
-    padding-bottom: 20px;
-    margin-top: 30px;
-
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  border: solid #ccc 1px;
+  padding-bottom: 20px;
+  margin-top: 30px;
 }
 
-.payroll-items{
-    /* border: solid #ccc .5px; */
-    display: flex;
-    padding: 5px;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-    margin-top: 25px;
-    margin-left: 9%;
-    width: 80%;
-    border-bottom: solid #ccc .5px;
+.payroll-items {
+  display: flex;
+  padding: 5px;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 25px;
+  margin-left: 9%;
+  width: 80%;
+  border-bottom: solid #ccc 0.5px;
 }
 
-.payroll-item{
-    padding-left: 3px;
-    padding-right: 25px;
-    /* border-right: solid .5px #ccc; */
+.payroll-item {
+  padding-left: 3px;
+  padding-right: 25px;
 }
 
-.jobs-container{
+.payroll-title {
+  font-size: 25px;
 }
 
-.payroll-title{
-    font-size: 25px;
+.payroll-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.payroll-details{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+.payroll-button {
+  color: green;
+  height: 30px;
+  width: 60px;
+  border-radius: 5px;
 }
 
-.payroll-payment{
+.payroll-button:hover {
+  cursor: pointer;
 }
 
-.payroll-button{
-    color: green;
-    height: 30px;
-    width: 60px;
-    border-radius: 5px;
+.payroll-item-name {
+  font-weight: bold;
+  width: 150px;
+  margin-bottom: 5px;
 }
 
-.payroll-button:hover{
-    cursor: pointer;
-}
-
-.payroll-item-name{
-    font-weight: bold;
-    /* border: solid #ccc 1px; */
-    width: 150px;
-    margin-bottom: 5px;
-
-}
-
-.payroll-container{
-    /* border: solid pink 1px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.payroll-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

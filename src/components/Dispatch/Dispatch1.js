@@ -23,8 +23,6 @@ class Dispatch1 extends Component {
               <div className="tooltiptext">React Redux</div>
               Enter Job Details
             </div>
-            {/* <div className="dispatch-item"><p>Shipper</p></div>
-                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handleShipper(e.target.value)}/></div> */}
 
             <div className="dispatch-item tooltip">
               <p>PickUp Address</p>
@@ -55,9 +53,6 @@ class Dispatch1 extends Component {
                 onChange={e => this.props.handleRate(e.target.value)}
               />
             </div>
-
-            {/* <div className="dispatch-item"><p>Date</p></div>
-                <div className="dispatch-input"><input type="text" onChange={(e) => this.props.handleDate(e.target.value)}/></div> */}
 
             <div className="dispatch-submit">
               <Link to="/dispatch2">

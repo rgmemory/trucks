@@ -1,53 +1,38 @@
-#sidebar{
-    /* border: solid black 1px; */
-    height: 100%;
-    width: 100%;
-    background-color: #EAEBEC;
-    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
-    border: solid #ccc .5px;
-    /* font-family: "Open Sans",Arial,sans-serif; */
+#sidebar {
+  height: 100%;
+  width: 100%;
+  background-color: #eaebec;
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+  border: solid #ccc 0.5px;
 }
 
-#sidebar-buttons{
-    /* margin-top: 50px; */
-    padding-top: 60px;
+#sidebar-buttons {
+  padding-top: 60px;
 }
 
-#sidebar-buttons p{
-    /* margin-top: 50px; */
-    padding-top: 60px;
-    font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
+#sidebar-buttons p {
+  padding-top: 60px;
+  font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#sidebar button{
-    /* font-family: tahoma, Verdana, Geneva, Tahoma, sans-serif; */
-    background-color: transparent;
-    height: 50px;
-    width: 100%;
-    margin-top: 15px;
-    border: none;
-    font-size: 25px;
-    color: black;
-    outline: none;
-    font-family: Helvetica Neue;
-    transition: color 0.2s;
+#sidebar button {
+  background-color: transparent;
+  height: 50px;
+  width: 100%;
+  margin-top: 15px;
+  border: none;
+  font-size: 25px;
+  color: black;
+  outline: none;
+  font-family: Helvetica Neue;
+  transition: color 0.2s;
 }
 
-#sidebar button:hover{
-    
-    color: #c4c5c6;
-    cursor: pointer;
-    /* border-bottom: solid #ccc 1px; */
+#sidebar button:hover {
+  color: #c4c5c6;
+  cursor: pointer;
 }
 
-/* #sidebar button p:hover{
-    
-    color: #ccc;
-    cursor: pointer;
-    border-bottom: solid #ccc 1px;
-} */
-
-#sidebar button:visited{
-    
-    border-bottom: solid black 3px;
+#sidebar button:visited {
+  border-bottom: solid black 3px;
 }

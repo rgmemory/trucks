@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./drivers.css";
-// import '../../App.css'
 import axios from "axios";
 import Simpletable from "../Drivertable/Drivertable";
 import plus from "../../images/plus.png";
@@ -19,7 +18,7 @@ export default class Drivers extends Component {
       phone: null,
       station: "",
       driverEditIndex: null,
-      email: ''
+      email: ""
     };
   }
 
@@ -30,7 +29,6 @@ export default class Drivers extends Component {
   };
 
   handleCloseModal = () => {
-    // console.log('1')
     this.setState({
       showModal: false
     });
@@ -39,14 +37,12 @@ export default class Drivers extends Component {
   };
 
   showEditModal = () => {
-    // console.log('Show')
     this.setState({
       showEditModal: true
     });
   };
 
   hideEditModal = () => {
-    console.log("1should click eddit driver");
     this.setState({
       showEditModal: false
     });
@@ -56,24 +52,13 @@ export default class Drivers extends Component {
 
   editDriverInfo = value => {
     this.showEditModal();
-    console.log(value);
     this.setState({
       driverEditIndex: value
     });
   };
 
   submitEditDriver = () => {
-    console.log("submit edit driver");
-
     let { first, last, email, station, driverEditIndex } = this.state;
-    console.log(
-      "2editdriver latest",
-      first,
-      last,
-      email,
-      station,
-      driverEditIndex
-    );
 
     if (first && last && email && station && driverEditIndex) {
       axios
@@ -86,16 +71,14 @@ export default class Drivers extends Component {
         })
         .then(res => {
           axios.get("/api/getdrivers").then(res => {
-            console.log("get inside of edit");
             this.setState({
               drivers: res.data
             });
           });
         });
+    } else {
+      alert("Please fill out all fields");
     }
-    // else{
-    //     alert('Please fill out all fields')
-    // }
   };
   componentDidMount() {
     axios.get("/api/getdrivers").then(res => {
@@ -127,10 +110,10 @@ export default class Drivers extends Component {
   };
 
   updateEmail = target => {
-      this.setState({
-          email: target
-      })
-  }
+    this.setState({
+      email: target
+    });
+  };
 
   modalSubmit = () => {
     let { first, last, phone, station, email } = this.state;
@@ -157,8 +140,6 @@ export default class Drivers extends Component {
   };
 
   deleteDriver = id => {
-    console.log("delete driver", id);
-
     axios.delete(`/api/deletedriver/${id}`).then(response => {
       axios.get("/api/getdrivers").then(res => {
         this.setState({
@@ -171,7 +152,9 @@ export default class Drivers extends Component {
   render() {
     return (
       <div id="drivers">
-        <div id="app-header"><p>Drivers</p></div>
+        <div id="app-header">
+          <p>Drivers</p>
+        </div>
 
         <div id="drivers-table">
           <Simpletable
@@ -238,7 +221,6 @@ export default class Drivers extends Component {
               <button onClick={this.hideEditModal}>Submit</button>
             </div>
           </div>
-          {/* <button onClick={this.handleCloseModal}>Close Modal</button> */}
         </ReactModal>
 
         <ReactModal
@@ -299,7 +281,6 @@ export default class Drivers extends Component {
               <button onClick={this.handleCloseModal}>Submit</button>
             </div>
           </div>
-          {/* <button onClick={this.handleCloseModal}>Close Modal</button> */}
         </ReactModal>
       </div>
     );
